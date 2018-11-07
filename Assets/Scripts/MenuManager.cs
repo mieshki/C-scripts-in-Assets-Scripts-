@@ -8,7 +8,8 @@ public class MenuManager : MonoBehaviour {
 
     public Button startGameButton;
 
-	void Start () {
+	void Start ()
+    {
         // adding on click listener
         Button startGameBtn = startGameButton.GetComponent<Button>();
         startGameBtn.onClick.AddListener(LoadGameScene);
@@ -21,6 +22,4 @@ public class MenuManager : MonoBehaviour {
     {
         SceneManager.LoadScene(1, LoadSceneMode.Single);
     }
-
-
 }

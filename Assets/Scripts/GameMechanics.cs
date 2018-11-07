@@ -67,10 +67,7 @@ public class GameMechanics : MonoBehaviour {
             StopSpecialFoodBlinking();
             DestroySpecialFood();
         }
-
     }
-
-
 
     #region Bug Fixes
 
@@ -118,8 +115,6 @@ public class GameMechanics : MonoBehaviour {
         else if (GUIButtons.nextDirection == GUIButtons.Direction.right)
             nextPos = Vector3.right;
 
-
-
         // checking if next move will be last made alive
         RaycastHit2D hit = Physics2D.Raycast(transform.position + 0.5f * nextPos, nextPos, 1f);
         if (hit.collider != null) 
@@ -135,10 +130,7 @@ public class GameMechanics : MonoBehaviour {
         // if move isn't last made alive, move snake's head and tail
         transform.position += nextPos;
         MoveTail();
-
     }
-
-
 
     /// <summary>
     /// Makes tail follow the head
@@ -160,7 +152,6 @@ public class GameMechanics : MonoBehaviour {
     void AddTailPiece()
     {
         Tail.Add(Instantiate(tailPrefab, Tail[Tail.Count - 1].position, Quaternion.identity).transform);
-
     }
 
     #endregion
@@ -191,7 +182,6 @@ public class GameMechanics : MonoBehaviour {
                 return;
             }
         }
-
     }
 
     #region Normal food
@@ -317,8 +307,6 @@ public class GameMechanics : MonoBehaviour {
         }
     }
 
-
-
     /// <summary>
     /// Setting snake's live to false, coloring to red and cancel invoke "MovementUpdate"
     /// </summary>
@@ -339,9 +327,5 @@ public class GameMechanics : MonoBehaviour {
 
         Time.timeScale = 0;
     }
-
-
     #endregion
-
-
 }

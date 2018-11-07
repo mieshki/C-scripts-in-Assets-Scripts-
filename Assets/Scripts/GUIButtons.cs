@@ -10,7 +10,6 @@ public class GUIButtons : MonoBehaviour {
     public Button upButton;
     public Button downButton;
 
-
     public Text scoreText;
     public static int score = 0;
 
@@ -31,9 +30,6 @@ public class GUIButtons : MonoBehaviour {
     // click fast twice direction button and snake was reversing into himself
     public static Direction currentDirection;
     public static Direction nextDirection;
-
-
-
 
     void Start () {
         // add on click listeners to the buttons
@@ -56,9 +52,7 @@ public class GUIButtons : MonoBehaviour {
     void TurnLeft()
     {       
         if (currentDirection != Direction.right)
-        {
             nextDirection = Direction.left;
-        }
     }
 
     /// <summary>
@@ -67,26 +61,19 @@ public class GUIButtons : MonoBehaviour {
     void TurnRight()
     {   
         if (currentDirection != Direction.left)
-        {
             nextDirection = Direction.right;
-        }   
     }
-
 
     void TurnUp()
     {
         if (currentDirection != Direction.down)
-        {
             nextDirection = Direction.up;
-        }
     }
 
     void TurnDown()
     {
         if (currentDirection != Direction.up)
-        {
             nextDirection = Direction.down;
-        }
     }
 
     void Update()
@@ -94,16 +81,10 @@ public class GUIButtons : MonoBehaviour {
         // updating gui score text
         scoreText.text = "Score:" + score;
 
-
         // shows gameover screen if you lost
         if (isSnakeAlive)
-        {
             gameOverScreen.SetActive(false);
-        }
         else if (!isSnakeAlive)
-        {
             gameOverScreen.SetActive(true);
-        }
     }
-
 }

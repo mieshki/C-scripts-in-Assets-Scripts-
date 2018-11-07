@@ -27,9 +27,7 @@ public class GameOverManager : MonoBehaviour {
     {
         // if game over screen is active, updating score
         if (!GUIButtons.isSnakeAlive)
-        {
             yourScoreText.text = "Your score:" + GUIButtons.score;
-        }
     }
 
     /// <summary>
@@ -61,5 +59,4 @@ public class GameOverManager : MonoBehaviour {
         GUIButtons.score = 0;
         Time.timeScale = 1;
     }
-
 }
